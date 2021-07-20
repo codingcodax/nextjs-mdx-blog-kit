@@ -1,3 +1,30 @@
 {
-  "extends": ["next", "next/core-web-vitals"]
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": ["next", "next/core-web-vitals", "google", "prettier"],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"rules": {
+		"react/react-in-jsx-scope": 0,
+		"react/prop-types": 0,
+		"require-jsdoc": 0,
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": ["js", "jsx"]
+			}
+		]
+	},
+	"settings": {
+		"react": {
+			"version": "latest"
+		}
+	}
 }
