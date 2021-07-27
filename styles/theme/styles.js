@@ -7,7 +7,12 @@ const styles = {
 					: 'linear-gradient(270deg, #5D1470 0%, #0B5F71 100%);',
 		},
 		'#__next': {
+			p: { base: '0.5rem', sm: '2rem' },
+			mx: 'auto',
 			minH: '100vh',
+			maxW: '1200px',
+			display: 'grid',
+			gridTemplate: '1fr auto / 1fr',
 		},
 	}),
 };
