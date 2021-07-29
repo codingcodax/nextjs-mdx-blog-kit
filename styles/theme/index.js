@@ -8,10 +8,11 @@ import styles from './styles';
 
 // Foundational style overrides
 import fonts from './foundations/fonts';
+import colors from './foundations/colors';
 
 // Component style overrides
 
-const overrides = { config, styles, fonts, components: {} };
+const overrides = { config, styles, fonts, colors, components: {} };
 
 const theme = extendTheme(overrides);
 
