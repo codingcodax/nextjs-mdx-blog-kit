@@ -18,6 +18,7 @@ const Header = () => {
 			justify='space-between'
 			position='fixed'
 			border='1px solid rgba(0, 0, 0, 0.8)'
+			zIndex='10'
 		>
 			<Avatar />
 			<Nav />
