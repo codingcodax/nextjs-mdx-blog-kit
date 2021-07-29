@@ -1,9 +1,13 @@
 import Image from 'next/image';
 import { Box, Grid, Heading, Text } from '@chakra-ui/react';
 
+import useColorModeValues from '@/hooks/useColorModeValues';
+
 import Link from './Link';
 
 const BlogPost = ({ slug, image, imageBlur, publishedAt, title, summary }) => {
+	const { headingPrimaryColor, grayColor } = useColorModeValues();
+
 	return (
 		<Link
 			href={`/blog/${slug}`}
@@ -24,19 +28,20 @@ const BlogPost = ({ slug, image, imageBlur, publishedAt, title, summary }) => {
 				</Box>
 
 				<Box>
-					<Text as='span' mb={2} fontSize='xs' color='#D1D1D1'>
+					<Text as='span' mb={2} fontSize='xs' color={grayColor}>
 						{publishedAt}
 					</Text>
 					<Heading
 						as='h3'
 						mb={3}
+						color={headingPrimaryColor}
 						fontSize='lg'
 						textTransform='capitalize'
 						fontWeight='500'
 					>
 						{title}
 					</Heading>
-					<Text color='#F1F1F1'>{summary}</Text>
+					<Text>{summary}</Text>
 				</Box>
 			</Grid>
 		</Link>
