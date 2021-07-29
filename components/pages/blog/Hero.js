@@ -13,7 +13,7 @@ const Hero = () => {
 	return (
 		<Grid templateColumns='1fr 1fr' columnGap={6}>
 			<Center>
-				<Heading as='h1' fontSize={40} lineHeight={1.3}>
+				<Heading as='h1' w='100%' fontSize={40} lineHeight={1.3}>
 					Hi there,
 					<br />
 					{`I'm ${name} a`}
