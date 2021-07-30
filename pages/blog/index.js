@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, Heading, Text } from '@chakra-ui/react';
 
 import useColorModeValues from '@/hooks/useColorModeValues';
 
 import { getPostsFrontMatter } from '@/utils/mdx';
 
 import SearchBar from '@/components/pages/blog/SearchBar';
+import BrowseByCategory from '@/components/pages/home/BrowseByCategory';
 import BlogPosts from '@/components/BlogPosts';
 
 export const getStaticProps = async () => {
@@ -17,6 +18,7 @@ export const getStaticProps = async () => {
 const Blog = ({ posts }) => {
 	const { headingPrimaryColor } = useColorModeValues();
 	const [searchValue, setSearchValue] = useState('');
+	const [category, setCategory] = useState('');
 	const filteredBlogPosts = posts
 		.sort(
 			(a, b) =>
@@ -25,6 +27,9 @@ const Blog = ({ posts }) => {
 		)
 		.filter((frontMatter) =>
 			frontMatter.title.toLowerCase().includes(searchValue.toLowerCase())
+		)
+		.filter((frontMatter) =>
+			frontMatter.category.toLowerCase().includes(category.toLowerCase())
 		);
 
 	return (
@@ -38,10 +43,14 @@ const Blog = ({ posts }) => {
 				handleChange={(e) => setSearchValue(e.target.value)}
 			/>
 
+			<BrowseByCategory category={category} setCategory={setCategory} />
+
 			<BlogPosts
-				title={searchValue.length > 0 ? 'Results' : 'Latest'}
+				title={searchValue || category ? 'Results' : 'Latest'}
 				posts={filteredBlogPosts}
 			/>
+
+			{!filteredBlogPosts.length && <Text>Not Posts Found</Text>}
 		</Box>
 	);
 };
