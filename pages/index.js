@@ -3,7 +3,7 @@ import { Box } from '@chakra-ui/react';
 import { getPostsFrontMatter } from '@/utils/mdx';
 
 import Hero from '@/components/pages/blog/Hero';
-import LatestBlogPosts from '@/components/LatestBlogPosts';
+import BlogPosts from '@/components/BlogPosts';
 
 export const getStaticProps = async () => {
 	const posts = await getPostsFrontMatter();
@@ -12,10 +12,15 @@ export const getStaticProps = async () => {
 };
 
 const Home = ({ posts }) => {
+	const sortedBlogPosts = posts.sort(
+		(a, b) =>
+			Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+	);
+
 	return (
 		<Box mt={48} mx='auto' maxW='1000px'>
 			<Hero />
-			<LatestBlogPosts posts={posts} />
+			<BlogPosts title='Latest' posts={sortedBlogPosts} />
 		</Box>
 	);
 };
