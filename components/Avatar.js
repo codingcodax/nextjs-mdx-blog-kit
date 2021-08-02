@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import { Center } from '@chakra-ui/react';
 
+import config from 'config';
+
+const { avatar } = config;
+
 const Avatar = () => {
 	return (
 		<Center
@@ -11,12 +15,7 @@ const Avatar = () => {
 			bgImage='linear-gradient(8.88deg, #CC00FF 6.76%, #006CFF 93.24%)'
 		>
 			<Center borderRadius='50%' overflow='hidden'>
-				<Image
-					src='https://avatars.githubusercontent.com/u/1250789?v=4'
-					height='46'
-					width='46'
-					alt='avatar'
-				/>
+				<Image src={avatar} height='46' width='46' alt='avatar' />
 			</Center>
 		</Center>
 	);
