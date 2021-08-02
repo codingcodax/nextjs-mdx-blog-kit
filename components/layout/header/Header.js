@@ -1,9 +1,12 @@
 import { Flex } from '@chakra-ui/react';
 
+import config from 'config';
 import useColorModeValues from '@/hooks/useColorModeValues';
 
 import Avatar from '../../Avatar';
 import Nav from './Nav';
+
+const { blurEffect } = config;
 
 const Header = () => {
 	const { glassBgOne, glassBgTwo, glassBoxShadow, glassBorder } =
@@ -20,7 +23,7 @@ const Header = () => {
 			position='fixed'
 			bg={`linear-gradient(90.89deg, ${glassBgOne} 25.56%, ${glassBgTwo} 62.83%);`}
 			boxShadow={`0px 4px 24px -1px ${glassBoxShadow};`}
-			backdropFilter='blur(40px)'
+			backdropFilter={`blur(${blurEffect})`}
 			borderRadius='20px'
 			border={`1px solid ${glassBorder}`}
 			zIndex='10'
