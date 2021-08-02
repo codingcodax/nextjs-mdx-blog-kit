@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react';
 
 import { getPostsFrontMatter } from '@/utils/mdx';
 
-import Hero from '@/components/pages/blog/Hero';
+import Hero from '@/components/pages/home/Hero';
 import BlogPosts from '@/components/BlogPosts';
 
 export const getStaticProps = async () => {

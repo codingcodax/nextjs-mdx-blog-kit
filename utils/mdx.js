@@ -41,10 +41,10 @@ export const getPostBySlug = async (slug) => {
 			summary: data.summary || '',
 			image:
 				data.image ||
-				'https://via.placeholder.com/800x336?text=cover+image',
+				'https://via.placeholder.com/800x400?text=cover+image',
 			imageBlur:
 				data.imageBlur ||
-				'https://via.placeholder.com/800x336?text=cover+image',
+				'https://via.placeholder.com/800x400?text=cover+image',
 		},
 	};
 };
