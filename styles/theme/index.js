@@ -11,8 +11,9 @@ import fonts from './foundations/fonts';
 import colors from './foundations/colors';
 
 // Component style overrides
+import Heading from './components/heading';
 
-const overrides = { config, styles, fonts, colors, components: {} };
+const overrides = { config, styles, fonts, colors, components: { Heading } };
 
 const theme = extendTheme(overrides);
 

@@ -1,3 +1,5 @@
+import mdx from './mdx';
+
 const styles = {
 	global: ({ colorMode }) => ({
 		body: {
@@ -15,6 +17,7 @@ const styles = {
 			display: 'grid',
 			gridTemplate: '1fr auto / 1fr',
 		},
+		...mdx(colorMode),
 	}),
 };
 
