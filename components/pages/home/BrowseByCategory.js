@@ -27,7 +27,6 @@ const BrowseByCategory = ({ category, setCategory }) => {
 					w='70px'
 					bg={`linear-gradient(90.89deg, ${glassBgOne} 25.56%, ${glassBgTwo} 62.83%);`}
 					boxShadow={`0px 4px 24px -1px ${glassBoxShadow};`}
-					backdropFilter='blur(40px)'
 					borderRadius='20px'
 					border={`1px solid ${glassBorder}`}
 					transform={`scale(${category === name ? '1.1' : '1'})`}

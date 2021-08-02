@@ -16,7 +16,6 @@ const mdx = (colorMode) => ({
 		boxShadow: `0px 4px 24px -1px ${
 			colorMode === 'light' ? '#fff3' : '#0003'
 		};`,
-		backdropFilter: 'blur(40px)',
 		border: `1px solid ${colorMode === 'light' ? '#fffc' : '#000c'}`,
 		borderRadius: '20px',
 	},
