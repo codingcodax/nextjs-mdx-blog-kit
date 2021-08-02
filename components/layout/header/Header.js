@@ -2,7 +2,7 @@ import { Flex } from '@chakra-ui/react';
 
 import useColorModeValues from '@/hooks/useColorModeValues';
 
-import Avatar from './Avatar';
+import Avatar from '../../Avatar';
 import Nav from './Nav';
 
 const Header = () => {
