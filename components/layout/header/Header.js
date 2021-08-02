@@ -6,13 +6,8 @@ import Avatar from './Avatar';
 import Nav from './Nav';
 
 const Header = () => {
-	const {
-		headingPrimaryColor,
-		glassBgOne,
-		glassBgTwo,
-		glassBoxShadow,
-		glassBorder,
-	} = useColorModeValues();
+	const { glassBgOne, glassBgTwo, glassBoxShadow, glassBorder } =
+		useColorModeValues();
 
 	return (
 		<Flex
@@ -23,7 +18,6 @@ const Header = () => {
 			maxW='calc(1200px - 64px)'
 			justify='space-between'
 			position='fixed'
-			color={headingPrimaryColor}
 			bg={`linear-gradient(90.89deg, ${glassBgOne} 25.56%, ${glassBgTwo} 62.83%);`}
 			boxShadow={`0px 4px 24px -1px ${glassBoxShadow};`}
 			backdropFilter='blur(40px)'

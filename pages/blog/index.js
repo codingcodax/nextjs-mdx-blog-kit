@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Box, Heading, Text } from '@chakra-ui/react';
 
-import useColorModeValues from '@/hooks/useColorModeValues';
-
 import { getPostsFrontMatter } from '@/utils/mdx';
 
 import SearchBar from '@/components/pages/blog/SearchBar';
@@ -16,7 +14,6 @@ export const getStaticProps = async () => {
 };
 
 const Blog = ({ posts }) => {
-	const { headingPrimaryColor } = useColorModeValues();
 	const [searchValue, setSearchValue] = useState('');
 	const [category, setCategory] = useState('');
 	const filteredBlogPosts = posts
@@ -34,7 +31,7 @@ const Blog = ({ posts }) => {
 
 	return (
 		<Box mt={48} mx='auto' w='100%' maxW='1000px'>
-			<Heading as='h1' color={headingPrimaryColor} fontSize={40}>
+			<Heading as='h1' fontSize={40}>
 				Blog Posts
 			</Heading>
 

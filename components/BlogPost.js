@@ -6,7 +6,7 @@ import useColorModeValues from '@/hooks/useColorModeValues';
 import Link from './Link';
 
 const BlogPost = ({ slug, image, imageBlur, publishedAt, title, summary }) => {
-	const { headingPrimaryColor, grayColor } = useColorModeValues();
+	const { grayColor } = useColorModeValues();
 
 	return (
 		<Link
@@ -34,7 +34,6 @@ const BlogPost = ({ slug, image, imageBlur, publishedAt, title, summary }) => {
 					<Heading
 						as='h3'
 						mb={3}
-						color={headingPrimaryColor}
 						fontSize='lg'
 						textTransform='capitalize'
 						fontWeight='500'
