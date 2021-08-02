@@ -8,8 +8,6 @@ import Avatar from '@/components/Avatar';
 const { name } = config;
 
 const Author = ({ publishedAt, readingTime }) => {
-	console.log(format(new Date(publishedAt), 'MMM dd, yyyy'));
-
 	return (
 		<>
 			<Divider my={8} />
