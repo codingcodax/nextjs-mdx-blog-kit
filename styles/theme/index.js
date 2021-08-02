@@ -12,8 +12,15 @@ import colors from './foundations/colors';
 
 // Component style overrides
 import Heading from './components/heading';
+import Code from './components/code';
 
-const overrides = { config, styles, fonts, colors, components: { Heading } };
+const overrides = {
+	config,
+	styles,
+	fonts,
+	colors,
+	components: { Heading, Code },
+};
 
 const theme = extendTheme(overrides);
 
