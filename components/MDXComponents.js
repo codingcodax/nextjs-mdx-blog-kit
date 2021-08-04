@@ -19,7 +19,7 @@ const MDXComponents = {
 	h5: (props) => <Heading as='h5' size='sm' mt={8} mb={3} {...props} />,
 	h6: (props) => <Heading as='h6' size='xs' mt={8} mb={3} {...props} />,
 	p: (props) => <Text mb={2} lineHeight={6} {...props} />,
-	a: (props) => <Link {...props} />,
+	a: (props) => <Link textDecoration='underline' {...props} />,
 	ul: (props) => <UnorderedList pl={4} mb={4} {...props} />,
 	ol: (props) => <OrderedList pl={4} mb={4} {...props} />,
 	li: (props) => <ListItem {...props} />,
