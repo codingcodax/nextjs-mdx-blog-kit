@@ -24,8 +24,6 @@ export const getStaticProps = async ({ params: { slug } }) => {
 };
 
 const BlogPost = ({ mdxSource, frontMatter, slug }) => {
-	console.log(frontMatter);
-
 	return (
 		<Box mt={48} mx='auto' w='100%' maxW='container.sm'>
 			<Seo name={frontMatter.title} path={`/${slug}`} />
