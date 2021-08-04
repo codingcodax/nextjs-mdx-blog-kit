@@ -3,6 +3,7 @@ import { Box, Heading, Text } from '@chakra-ui/react';
 
 import { getPostsFrontMatter } from '@/utils/mdx';
 
+import Seo from '@/components/Seo';
 import SearchBar from '@/components/pages/blog/SearchBar';
 import BrowseByCategory from '@/components/pages/home/BrowseByCategory';
 import BlogPosts from '@/components/BlogPosts';
@@ -31,6 +32,8 @@ const Blog = ({ posts }) => {
 
 	return (
 		<Box mt={48} mx='auto' w='100%' maxW='1000px'>
+			<Seo name='blog' path='/blog' />
+
 			<Heading as='h1' fontSize={40}>
 				Blog Posts
 			</Heading>

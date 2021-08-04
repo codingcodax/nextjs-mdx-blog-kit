@@ -3,6 +3,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import { getPostBySlug, getPosts } from '@/utils/mdx';
 import { Box, Heading } from '@chakra-ui/react';
 
+import Seo from '@/components/Seo';
 import Image from '@/components/pages/blog/Image';
 import Author from '@/components/pages/blog/Author';
 import MDXComponents from '@/components/MDXComponents';
@@ -23,8 +24,12 @@ export const getStaticProps = async ({ params: { slug } }) => {
 };
 
 const BlogPost = ({ mdxSource, frontMatter, slug }) => {
+	console.log(frontMatter);
+
 	return (
 		<Box mt={48} mx='auto' w='100%' maxW='container.sm'>
+			<Seo name={frontMatter.title} path={`/${slug}`} />
+
 			<Image
 				src={frontMatter.image}
 				blurDataURL={frontMatter.imageBlur}
