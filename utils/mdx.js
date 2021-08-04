@@ -45,6 +45,7 @@ export const getPostBySlug = async (slug) => {
 			imageBlur:
 				data.imageBlur ||
 				'https://via.placeholder.com/800x400?text=cover+image',
+			tableOfContents: data.tableOfContents | null,
 		},
 	};
 };
