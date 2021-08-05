@@ -1,6 +1,13 @@
 import NextImage from 'next/image';
 
-const Image = ({ src, blurDataURL, title, height, width }) => {
+const Image = ({
+	src,
+	blurDataURL,
+	title,
+	height,
+	width,
+	objectFit = 'cover',
+}) => {
 	return blurDataURL ? (
 		<NextImage
 			src={src}
@@ -9,9 +16,16 @@ const Image = ({ src, blurDataURL, title, height, width }) => {
 			alt={title}
 			height={height}
 			width={width}
+			objectFit={objectFit}
 		/>
 	) : (
-		<NextImage src={src} alt={title} height={height} width={width} />
+		<NextImage
+			src={src}
+			alt={title}
+			height={height}
+			width={width}
+			objectFit={objectFit}
+		/>
 	);
 };
 
