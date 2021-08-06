@@ -43,7 +43,7 @@ const BlogPost = ({ slug, image, imageBlur, publishedAt, title, summary }) => {
 					>
 						{title}
 					</Heading>
-					<Text>{summary}</Text>
+					<Text noOfLines={[3, 4]}>{summary}</Text>
 				</Box>
 			</Grid>
 		</Link>
