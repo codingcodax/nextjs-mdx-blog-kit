@@ -11,6 +11,11 @@ const config = {
 			'Freelance font-end web developer focused on building scalable, maintainable and accessible solutions on the web.',
 	},
 	blurEffect: '10px',
+	socials: [
+		{ title: 'GitHub', url: 'https://github.com/a12989x/' },
+		{ title: 'Twitter', url: 'https://twitter.com/__codax__' },
+		{ title: 'Linkedin', url: 'https://www.linkedin.com/in/codax/' },
+	],
 };
 
 export default config;
