@@ -1,10 +1,12 @@
 import Link from '@/components/Link';
 import { VStack } from '@chakra-ui/react';
 
-const LinkItem = ({ href, children }) => {
+const LinkItem = ({ href, children, ...props }) => {
 	return (
 		<VStack as='li'>
-			<Link href={href}>{children}</Link>
+			<Link href={href} {...props}>
+				{children}
+			</Link>
 		</VStack>
 	);
 };
