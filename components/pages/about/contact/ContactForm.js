@@ -7,7 +7,9 @@ import {
 	Textarea,
 } from '@chakra-ui/react';
 
-import { useForm } from '@/hooks/useForm';
+import useForm from '@/hooks/useForm';
+import useColorModeValues from '@/hooks/useColorModeValues';
+import { ErrorMessage, SuccessMessage } from './Messages';
 
 const ContactForm = () => {
 	const [values, handleChange] = useForm({
@@ -17,6 +19,14 @@ const ContactForm = () => {
 	});
 	const [formState, setFormState] = useState({ state: '', message: '' });
 	const [isLoading, setIsLoading] = useState(false);
+
+	const {
+		headingSecondaryColor,
+		glassBgOne,
+		glassBgTwo,
+		glassBoxShadow,
+		glassBorder,
+	} = useColorModeValues();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -53,7 +63,7 @@ const ContactForm = () => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<FormControl id='name'>
-				<FormLabel>Name</FormLabel>
+				<FormLabel color={headingSecondaryColor}>Name</FormLabel>
 				<Input
 					mb={4}
 					type='name'
@@ -61,13 +71,17 @@ const ContactForm = () => {
 					onChange={handleChange}
 					isRequired
 					autoComplete='name'
-					borderRadius='sm'
 					placeholder='jimmy'
+					bg={`linear-gradient(90.89deg, ${glassBgOne} 25.56%, ${glassBgTwo} 62.83%);`}
+					boxShadow={`0px 4px 24px -1px ${glassBoxShadow};`}
+					borderRadius='20px'
+					border={`1px solid ${glassBorder}`}
+					_hover={{ bgColor: glassBgTwo }}
 				/>
 			</FormControl>
 
 			<FormControl id='email'>
-				<FormLabel>Email</FormLabel>
+				<FormLabel color={headingSecondaryColor}>Email</FormLabel>
 				<Input
 					mb={4}
 					type='email'
@@ -75,13 +89,17 @@ const ContactForm = () => {
 					onChange={handleChange}
 					isRequired
 					autoComplete='email'
-					borderRadius='sm'
 					placeholder='jimmy@choo.com'
+					bg={`linear-gradient(90.89deg, ${glassBgOne} 25.56%, ${glassBgTwo} 62.83%);`}
+					boxShadow={`0px 4px 24px -1px ${glassBoxShadow};`}
+					borderRadius='20px'
+					border={`1px solid ${glassBorder} !important`}
+					_hover={{ bgColor: glassBgTwo }}
 				/>
 			</FormControl>
 
 			<FormControl id='message'>
-				<FormLabel>Message</FormLabel>
+				<FormLabel color={headingSecondaryColor}>Message</FormLabel>
 				<Textarea
 					mb={4}
 					h='8rem'
@@ -89,23 +107,35 @@ const ContactForm = () => {
 					value={values.message}
 					onChange={handleChange}
 					isRequired
-					borderRadius='sm'
 					placeholder='type your message...'
+					bg={`linear-gradient(90.89deg, ${glassBgOne} 25.56%, ${glassBgTwo} 62.83%);`}
+					boxShadow={`0px 4px 24px -1px ${glassBoxShadow};`}
+					borderRadius='20px'
+					border={`1px solid ${glassBorder} !important`}
+					_hover={{ bgColor: glassBgTwo }}
 				/>
 			</FormControl>
 
 			<Button
 				w='100%'
-				// variant='primary'
 				type='submit'
 				isLoading={isLoading}
 				loadingText='sending...'
+				bg={`linear-gradient(90.89deg, ${glassBgOne} 25.56%, ${glassBgTwo} 62.83%);`}
+				boxShadow={`0px 4px 24px -1px ${glassBoxShadow};`}
+				borderRadius='20px'
+				border={`1px solid ${glassBorder} !important`}
+				_hover={{ bgColor: glassBgTwo }}
 			>
 				Send
 			</Button>
 
-			{formState.state === 'success' && <p mt={4}>{formState.message}</p>}
-			{formState.state === 'error' && <p mt={4}>{formState.message}</p>}
+			{formState.state === 'success' && (
+				<SuccessMessage mt={4}>{formState.message}</SuccessMessage>
+			)}
+			{formState.state === 'error' && (
+				<ErrorMessage mt={4}>{formState.message}</ErrorMessage>
+			)}
 		</form>
 	);
 };
