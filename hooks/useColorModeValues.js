@@ -15,6 +15,16 @@ const useColorModeValues = () => {
 	const glassBoxShadow = useColorModeValue('#fff3', '#0003');
 	const glassBorder = useColorModeValue('#fffc', '#000c');
 
+	const successColor = useColorModeValue(
+		'accent.successDark',
+		'accent.successLight'
+	);
+
+	const errorColor = useColorModeValue(
+		'accent.errorDark',
+		'accent.errorLight'
+	);
+
 	return {
 		headingPrimaryColor,
 		headingSecondaryColor,
@@ -24,6 +34,8 @@ const useColorModeValues = () => {
 		glassBgTwo,
 		glassBoxShadow,
 		glassBorder,
+		successColor,
+		errorColor,
 	};
 };
 
