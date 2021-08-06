@@ -1,0 +1,99 @@
+---
+title: Guide NextJS MDX Kit
+publishedAt: '2021-07-25'
+summary: Introduction to the kit will see what you can do and some little examples.
+image: https://res.cloudinary.com/codax/image/upload/v1628116073/projects/mdx-nextjs-chakraui-glass-neumorphism/guide.png
+imageBlur: https://res.cloudinary.com/codax/image/upload/v1628116073/projects/mdx-nextjs-chakraui-glass-neumorphism/guide_blur.jpg
+category: javascript
+---
+
+After deciding that we want to start a blog, many of us don't know whether to choose an existing blogging platform or create our own blog from scratch.
+
+Each option has advantages and disadvantages. The purpose of the kit is to be able to have your blog a little more configurable, without having to create it from scratch, by having something different from the normal.
+
+## What can you do? 🤔
+
+In the `config.js` file you can:
+
+-   Configure your name.
+-   Configure your career.
+-   Configure your avatar image (by default with GitHub).
+-   Choose if you want blur effect.
+
+With the kit you can:
+
+-   Publish your blog posts.
+-   Search blog posts with the name, category or both.
+-   Have a contact section through a form (powered by [Formspree](https://formspree.io/)).
+
+## Tech stack 💪
+
+-   Next JS as framework.
+-   Chakra UI as component library.
+-   MDX for blog posts.
+-   Framer Motion for animations.
+
+## How to? ⚙️
+
+In this section you will see how to make various cifigurations of the kit.
+
+### Name and career.
+
+```javascript:config.js
+{
+    name: 'YOUR NAME'
+    career: 'YOUR CAREER'
+    ...
+}
+```
+
+### Title and description.
+
+```javascript{4,5}
+{
+    ...
+    seo:{
+        title: 'YOUR TITLE',
+        description: 'YOUR DESCRIPTION'
+    }
+    ...
+}
+```
+
+### Avatar
+
+You can change your GitHub image link, but if you want an image from another domain, like twitter you need to add the domain in `next.config.js` file.
+
+```javascript:config.js
+{
+    avatar: 'https://pbs.twimg.com/profile_images/1374023592523005952/lfkEIHsx_400x400.jpg'
+}
+```
+
+```javascript:next.config.js
+{
+	images: {
+		domains: ['pbs.twimg.com'];
+	}
+}
+
+```
+
+### Other configurations.
+
+```javascript
+{
+    blurEffect: '10px',
+}
+```
+
+### Enable/Disable blur effect for image
+
+When you host your images in a service (like cloudinary) you can use only `image` and leave `imageBlur` empty, so you will disable the blur effect, and if you use `imageBlur` you will have the blur effect.
+
+```markdown:post.mdx
+---
+image: NORMAL IMAGE LINK
+imageBlur: BLUR IMAGE LINK
+---
+```
