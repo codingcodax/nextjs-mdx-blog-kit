@@ -9,6 +9,12 @@ const colors = {
 		700: '#101010',
 		800: '#0b0b0b',
 	},
+	accent: {
+		successLight: '#68D391',
+		successDark: '#04ae5f',
+		errorLight: '#FC8181',
+		errorDark: '#ff1d1d',
+	},
 };
 
 export default colors;
