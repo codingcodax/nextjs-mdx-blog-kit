@@ -1,7 +1,9 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import { Box, Grid, Heading, Text } from '@chakra-ui/react';
 
 import useColorModeValues from '@/hooks/useColorModeValues';
+
+import Image from '@/components/pages/blog/Image';
 
 import Link from './Link';
 
@@ -21,9 +23,10 @@ const BlogPost = ({ slug, image, imageBlur, publishedAt, title, summary }) => {
 							image ||
 							'https://via.placeholder.com/160x160?text=cover+image'
 						}
+						blurDataURL={imageBlur}
 						alt={title}
-						height='160'
-						width='160'
+						height='360'
+						width='360'
 					/>
 				</Box>
 
