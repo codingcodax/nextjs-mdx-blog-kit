@@ -14,6 +14,8 @@ const BlogPost = ({ slug, image, imageBlur, publishedAt, title, summary }) => {
 		<Link
 			href={`/blog/${slug}`}
 			w='100%'
+			maxH='160px'
+			overflow='hidden'
 			_hover={{ textDecoration: 'none' }}
 		>
 			<Grid templateColumns='auto 1fr' columnGap={5}>
@@ -43,7 +45,7 @@ const BlogPost = ({ slug, image, imageBlur, publishedAt, title, summary }) => {
 					>
 						{title}
 					</Heading>
-					<Text noOfLines={[3, 4]}>{summary}</Text>
+					<Text noOfLines={[2, 3, 4]}>{summary}</Text>
 				</Box>
 			</Grid>
 		</Link>
