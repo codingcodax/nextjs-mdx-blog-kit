@@ -2,11 +2,16 @@ import { MDXRemote } from 'next-mdx-remote';
 
 import { getPostBySlug, getPosts } from '@/utils/mdx';
 import { Box, Heading } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
+
+import { pageContainer } from '@/utils/animations';
 
 import Seo from '@/components/Seo';
 import Image from '@/components/pages/blog/Image';
 import Author from '@/components/pages/blog/Author';
 import MDXComponents from '@/components/MDXComponents';
+
+const BoxFramer = motion(Box);
 
 export const getStaticPaths = async () => {
 	const posts = await getPosts();
@@ -25,7 +30,15 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
 const BlogPost = ({ mdxSource, frontMatter, slug }) => {
 	return (
-		<Box mt={48} mx='auto' w='100%' maxW='container.sm'>
+		<BoxFramer
+			mt={48}
+			mx='auto'
+			w='100%'
+			maxW='container.sm'
+			variants={pageContainer}
+			initial='hidden'
+			animate='show'
+		>
 			<Seo name={frontMatter.title} path={`/${slug}`} />
 
 			<Image
@@ -48,7 +61,7 @@ const BlogPost = ({ mdxSource, frontMatter, slug }) => {
 			<Box as='section' mt={20}>
 				<MDXRemote {...mdxSource} components={MDXComponents} />
 			</Box>
-		</Box>
+		</BoxFramer>
 	);
 };
 
