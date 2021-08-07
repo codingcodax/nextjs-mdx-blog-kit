@@ -37,8 +37,6 @@ const ContactForm = () => {
 			method: 'POST',
 		};
 
-		console.log(values, JSON.stringify(values), options);
-
 		const res = await fetch('/api/contact/', options);
 
 		const { success, message } = await res.json();
