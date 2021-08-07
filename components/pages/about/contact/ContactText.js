@@ -1,7 +1,5 @@
 import { Box, Text } from '@chakra-ui/react';
 
-import Link from '@/components/Link';
-
 const ContactText = () => {
 	return (
 		<Box>
@@ -12,9 +10,8 @@ const ContactText = () => {
 			</Text>
 
 			<Text mt={3}>
-				Or if you would prefer to, you can also reach me on{' '}
-				<Link href='https://twitter.com/_codax_'>twitter</Link> and
-				linkedin.
+				Or if you would prefer to, you can also reach me on my socials
+				network.
 			</Text>
 		</Box>
 	);
