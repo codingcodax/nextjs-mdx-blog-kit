@@ -1,14 +1,23 @@
 import { Box, Heading, VStack } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 import useColorModeValues from '@/hooks/useColorModeValues';
 
 import BlogPost from './BlogPost';
 
+const BoxFramer = motion(Box);
+
 const BlogPosts = ({ title, posts }) => {
 	const { headingSecondaryColor } = useColorModeValues();
 
 	return (
-		<Box mt={24} mx='auto' maxW='1000px'>
+		<BoxFramer
+			mt={24}
+			mx='auto'
+			maxW='1000px'
+			initial={{ opacity: 0, y: 50 }}
+			animate={{ y: 0, opacity: 1, transition: { delay: 0.5 } }}
+		>
 			<Heading
 				as='h2'
 				size='md'
@@ -24,7 +33,7 @@ const BlogPosts = ({ title, posts }) => {
 					<BlogPost key={blogPost.title} {...blogPost} />
 				))}
 			</VStack>
-		</Box>
+		</BoxFramer>
 	);
 };
 

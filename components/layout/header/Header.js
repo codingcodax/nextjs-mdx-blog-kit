@@ -1,4 +1,5 @@
 import { Flex } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 import config from 'config';
 import useColorModeValues from '@/hooks/useColorModeValues';
@@ -8,12 +9,14 @@ import Nav from './Nav';
 
 const { blurEffect } = config;
 
+const FlexFramer = motion(Flex);
+
 const Header = () => {
 	const { glassBgOne, glassBgTwo, glassBoxShadow, glassBorder } =
 		useColorModeValues();
 
 	return (
-		<Flex
+		<FlexFramer
 			as='header'
 			py={{ base: 2, sm: 4 }}
 			px={{ base: 2.5, sm: 5 }}
@@ -27,10 +30,12 @@ const Header = () => {
 			borderRadius='20px'
 			border={`1px solid ${glassBorder}`}
 			zIndex='10'
+			initial={{ y: -100, opacity: 0, transition: { delay: 0.4 } }}
+			animate={{ y: 0, opacity: 1 }}
 		>
 			<Avatar />
 			<Nav />
-		</Flex>
+		</FlexFramer>
 	);
 };
 

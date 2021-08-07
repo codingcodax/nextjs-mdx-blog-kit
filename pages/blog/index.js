@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Box, Heading, Text } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 import { getPostsFrontMatter } from '@/utils/mdx';
 
@@ -7,6 +8,9 @@ import Seo from '@/components/Seo';
 import SearchBar from '@/components/pages/blog/SearchBar';
 import BrowseByCategory from '@/components/pages/home/BrowseByCategory';
 import BlogPosts from '@/components/BlogPosts';
+import { pageContainer } from '@/utils/animations';
+
+const BoxFramer = motion(Box);
 
 export const getStaticProps = async () => {
 	const posts = await getPostsFrontMatter();
@@ -31,7 +35,15 @@ const Blog = ({ posts }) => {
 		);
 
 	return (
-		<Box mt={48} mx='auto' w='100%' maxW='1000px'>
+		<BoxFramer
+			mt={48}
+			mx='auto'
+			w='100%'
+			maxW='1000px'
+			variants={pageContainer}
+			initial='hidden'
+			animate='show'
+		>
 			<Seo name='blog' path='/blog' />
 
 			<Heading as='h1' fontSize={40}>
@@ -51,7 +63,7 @@ const Blog = ({ posts }) => {
 			/>
 
 			{!filteredBlogPosts.length && <Text>Not Posts Found</Text>}
-		</Box>
+		</BoxFramer>
 	);
 };
 
