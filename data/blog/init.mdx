@@ -49,7 +49,7 @@ In this section you will see how to make various cifigurations of the kit.
 
 ### Title and description.
 
-```javascript{4,5}
+```javascript
 {
     ...
     seo:{
@@ -79,7 +79,7 @@ You can change your GitHub image link, but if you want an image from another dom
 
 ```
 
-### Other configurations.
+### Blur Effect.
 
 ```javascript
 {
@@ -89,11 +89,87 @@ You can change your GitHub image link, but if you want an image from another dom
 
 ### Enable/Disable blur effect for image
 
-When you host your images in a service (like cloudinary) you can use only `image` and leave `imageBlur` empty, so you will disable the blur effect, and if you use `imageBlur` you will have the blur effect.
+When you host your images in a service (like Cloudinary), you can use only `image` and leave `imageBlur` empty, so you will disable the blur effect, and if you use `imageBlur` you will have the blur effect.
 
 ```markdown:post.mdx
 ---
 image: NORMAL IMAGE LINK
 imageBlur: BLUR IMAGE LINK
 ---
+```
+
+### Mark lines of code.
+
+You can make enphasis on lines in code adding `{}`, and the numbers of lines that you can mark separated by a comma `{4,5}` (without a blak space).
+
+````markdown:post.mdx
+```javascript{4,5}
+{
+    ...
+    seo:{
+        title: 'YOUR TITLE',
+        description: 'YOUR DESCRIPTION'
+    }
+    ...
+}
+```
+````
+
+```javascript{4,5}
+{
+    ...
+    seo:{
+        title: 'YOUR TITLE',
+        description: 'YOUR DESCRIPTION'
+    }
+    ...
+}
+```
+
+### Title for `block code`'s
+
+If you want name the `block code` you need tell the name after set the languae for the `block code`.
+
+````markdown:post.mdx
+```markdown:post.mdx
+---
+image: NORMAL IMAGE LINK
+imageBlur: BLUR IMAGE LINK
+---
+```
+````
+
+```markdown:post.mdx
+---
+image: NORMAL IMAGE LINK
+imageBlur: BLUR IMAGE LINK
+---
+```
+
+### Mark and Title
+
+If you want the both features just need tell the name after the laguage and the lines of code that you want mark.
+
+````
+```javascript{4,5}:config.js
+{
+    ...
+    seo:{
+        title: 'YOUR TITLE',
+        description: 'YOUR DESCRIPTION'
+    }
+    ...
+}
+```
+````
+
+```javascript{4,5}:config.js
+{
+    ...
+    seo:{
+        title: 'YOUR TITLE',
+        description: 'YOUR DESCRIPTION'
+    }
+    ...
+}
 ```
