@@ -1,5 +1,8 @@
 const name = 'Alexis Guzman';
 const career = 'Front-end Developer';
+export const github = 'https://github.com/a12989x/';
+export const twitter = 'https://twitter.com/__codax__';
+export const linkedin = 'https://www.linkedin.com/in/codax/';
 
 const config = {
 	name,
@@ -12,9 +15,9 @@ const config = {
 	},
 	blurEffect: '10px',
 	socials: [
-		{ title: 'GitHub', url: 'https://github.com/a12989x/' },
-		{ title: 'Twitter', url: 'https://twitter.com/__codax__' },
-		{ title: 'Linkedin', url: 'https://www.linkedin.com/in/codax/' },
+		{ title: 'GitHub', url: github },
+		{ title: 'Twitter', url: twitter },
+		{ title: 'Linkedin', url: linkedin },
 	],
 };
 
