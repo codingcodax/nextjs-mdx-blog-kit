@@ -7,11 +7,11 @@ const {
 const SEO = {
 	title,
 	description,
-	canonical: 'https://codaxx.ml',
+	canonical: 'https://nextjs-mdx-blog-kit-nu.vercel.app/',
 	openGraph: {
 		type: 'website',
 		locale: 'en_IE',
-		url: 'https://codaxx.ml',
+		url: 'https://nextjs-mdx-blog-kit-nu.vercel.app/',
 		title,
 		description,
 		images: [
