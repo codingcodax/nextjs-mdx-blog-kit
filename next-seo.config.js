@@ -1,22 +1,23 @@
 import config from './config';
 
 const {
+	domain,
 	seo: { title, description },
 } = config;
 
 const SEO = {
 	title,
 	description,
-	canonical: 'https://nextjs-mdx-blog-kit-nu.vercel.app/',
+	canonical: `${domain}/`,
 	openGraph: {
 		type: 'website',
 		locale: 'en_IE',
-		url: 'https://nextjs-mdx-blog-kit-nu.vercel.app/',
+		url: `${domain}/`,
 		title,
 		description,
 		images: [
 			{
-				url: 'https://fastfeedback.io/og.png',
+				url: `${domain}/images/og.png`,
 				alt: title,
 				width: 1280,
 				height: 720,
