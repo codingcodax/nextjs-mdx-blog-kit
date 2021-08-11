@@ -10,6 +10,7 @@ import {
 	UnorderedList,
 } from '@chakra-ui/react';
 import Link from './Link';
+import CodeBlock from './CodeBlock';
 
 const MDXComponents = {
 	h1: (props) => <Heading as='h1' size='xl' mt={8} mb={3} {...props} />,
@@ -26,6 +27,7 @@ const MDXComponents = {
 	inlineCode: (props) => <Code {...props} />,
 	hr: (props) => <Divider mt={14} mb={10} {...props} />,
 	Image,
+	code: (props) => <CodeBlock>{props.children}</CodeBlock>,
 };
 
 export default MDXComponents;
