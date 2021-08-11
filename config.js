@@ -7,6 +7,7 @@ export const linkedin = 'https://www.linkedin.com/in/codax/';
 const config = {
 	name,
 	career,
+	domain: 'https://nextjs-mdx-blog-kit-nu.vercel.app',
 	avatar: 'https://avatars.githubusercontent.com/u/48135533?v=4',
 	seo: {
 		title: `${name} – ${career}`,
