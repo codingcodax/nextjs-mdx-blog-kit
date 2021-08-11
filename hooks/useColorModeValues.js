@@ -15,6 +15,10 @@ const useColorModeValues = () => {
 	const glassBoxShadow = useColorModeValue('#fff3', '#0003');
 	const glassBorder = useColorModeValue('#fffc', '#000c');
 
+	/* ──────────────────── Progress Bar ──────────────────── */
+	const progressBgOne = useColorModeValue('#0009', '#fff9');
+	const progressBgTwo = useColorModeValue('#0000004d', '#ffffff4d');
+
 	const successColor = useColorModeValue(
 		'accent.successDark',
 		'accent.successLight'
@@ -36,6 +40,8 @@ const useColorModeValues = () => {
 		glassBorder,
 		successColor,
 		errorColor,
+		progressBgOne,
+		progressBgTwo,
 	};
 };
 
