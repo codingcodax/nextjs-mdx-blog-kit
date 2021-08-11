@@ -1,0 +1,20 @@
+{
+    "name": "Alexis Guzman – Front-end developer",
+    "short_name": "Codax",
+    "description": "Freelance font-end web developer focused on building scalable, maintainable and accessible solutions on the web.",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#805ad5",
+    "background_color": "#805ad5",
+    "display": "standalone"
+}
