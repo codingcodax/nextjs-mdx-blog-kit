@@ -10,6 +10,7 @@ import Seo from '@/components/Seo';
 import Image from '@/components/pages/blog/Image';
 import Author from '@/components/pages/blog/Author';
 import MDXComponents from '@/components/MDXComponents';
+import ScrollProgress from '@/components/pages/blog/ScrollProgress';
 
 const BoxFramer = motion(Box);
 
@@ -59,6 +60,8 @@ const BlogPost = ({ mdxSource, frontMatter, slug }) => {
 			/>
 
 			<Box as='section' mt={20}>
+				<ScrollProgress />
+
 				<MDXRemote {...mdxSource} components={MDXComponents} />
 			</Box>
 		</BoxFramer>
